@@ -3,8 +3,6 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
-
-    // Mapa para facilitar a seleção de operações (Dependência e Associações)
     private static final Map<Integer, OperacaoMatematica> OPERACOES = Map.of(
         1, new Soma(),
         2, new Subtracao(),
@@ -14,8 +12,8 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        Calculadora calc = new Calculadora(); // Associação
-        Historico historico = new Historico(); // Associação
+        Calculadora calc = new Calculadora(); 
+        Historico historico = new Historico(); 
 
         boolean continuar = true;
 
@@ -39,7 +37,7 @@ public class Main {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Erro: Entrada inválida. Por favor, digite um número.");
-                entrada.next(); // Limpa o buffer de entrada
+                entrada.next(); 
             } catch (Exception e) {
                 System.out.println("Ocorreu um erro inesperado: " + e.getMessage());
             }
@@ -67,19 +65,17 @@ public class Main {
         exibirMenuOperacoes();
         int opcao = entrada.nextInt();
 
-        OperacaoMatematica operacaoSelecionada = OPERACOES.get(opcao); // Polimorfismo
-
+        OperacaoMatematica operacaoSelecionada = OPERACOES.get(opcao); 
         if (operacaoSelecionada == null) {
             System.out.println("Opção de operação inválida!");
             return;
         }
 
         try {
-            // Polimorfismo em ação: a Calculadora não sabe qual operação está executando, apenas a executa.
             double resultado = calc.calcular(num1, num2, operacaoSelecionada);
             System.out.println("Resultado: " + resultado);
 
-            // Criação do objeto RegistroCalculo (Composição)
+        
             RegistroCalculo registro = new RegistroCalculo(
                 num1,
                 num2,
@@ -87,7 +83,7 @@ public class Main {
                 resultado
             );
 
-            historico.adicionar(registro); // Associação
+            historico.adicionar(registro); 
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
