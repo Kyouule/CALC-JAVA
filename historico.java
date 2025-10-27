@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Historico {
-    private final List<RegistroCalculo> registros = new ArrayList<>();
+    private final List<HistoricoCalculo> registros = new ArrayList<>();
 
-    public void adicionar(RegistroCalculo registro) {
+    public void adicionar(HistoricoCalculo registro) {
         registros.add(registro);
     }
 
