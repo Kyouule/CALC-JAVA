@@ -3,7 +3,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
-    private static final Map<Integer, OperacaoMatematica> OPERACOES = Map.of(
+    private static final Map<Integer, Operacacao> OPERACOES = Map.of(
         1, new Soma(),
         2, new Subtracao(),
         3, new Multiplicacao(),
@@ -65,7 +65,7 @@ public class Main {
         exibirMenuOperacoes();
         int opcao = entrada.nextInt();
 
-        OperacaoMatematica operacaoSelecionada = OPERACOES.get(opcao); 
+        Operacao operacaoSelecionada = OPERACOES.get(opcao); 
         if (operacaoSelecionada == null) {
             System.out.println("Opção de operação inválida!");
             return;
@@ -76,7 +76,7 @@ public class Main {
             System.out.println("Resultado: " + resultado);
 
         
-            RegistroCalculo registro = new RegistroCalculo(
+            HistoricoCalculo registro = new HistoricoCalculo(
                 num1,
                 num2,
                 operacaoSelecionada.getSimbolo(),
