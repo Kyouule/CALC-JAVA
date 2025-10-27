@@ -1,4 +1,4 @@
-public class Divisao implements OperacaoMatematica {
+public class Divisao implements operacao {
     @Override
     public double executar(double num1, double num2) {
         if (num2 == 0) {
