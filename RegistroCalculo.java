@@ -1,24 +1,21 @@
-public class RegistroCalculo {
+public class Historico {
     private final double num1;
     private final double num2;
     private final String simbolo;
     private final double resultado;
 
-    // Construtor
-    public RegistroCalculo(double num1, double num2, String simbolo, double resultado) {
+    public Historico(double num1, double num2, String simbolo, double resultado) {
         this.num1 = num1;
         this.num2 = num2;
         this.simbolo = simbolo;
         this.resultado = resultado;
     }
 
-    // Encapsulamento: método para obter a representação formatada do registro
     @Override
     public String toString() {
         return String.format("%.2f %s %.2f = %.2f", num1, simbolo, num2, resultado);
     }
 
-    // Getters (se necessários, mas toString resolve o requisito de exibição)
     public double getNum1() {
         return num1;
     }
