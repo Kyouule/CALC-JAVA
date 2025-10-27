@@ -1,10 +1,10 @@
-public class Historico {
+public class HistoricoCalculo {
     private final double num1;
     private final double num2;
     private final String simbolo;
     private final double resultado;
 
-    public Historico(double num1, double num2, String simbolo, double resultado) {
+    public HistoricoCalculo(double num1, double num2, String simbolo, double resultado) {
         this.num1 = num1;
         this.num2 = num2;
         this.simbolo = simbolo;
